@@ -1,0 +1,26 @@
+{
+  "name": "torga",
+  "version": "0.1.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bulldogz9495/torga.git"
+  },
+  "keywords": [
+    "task",
+    "organization"
+  ],
+  "author": "Alex Boyer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bulldogz9495/torga/issues"
+  },
+  "homepage": "https://github.com/Bulldogz9495/torga#readme",
+  "devDependencies": {
+    "electron": "^26.1.0"
+  }
+}
