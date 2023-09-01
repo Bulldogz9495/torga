@@ -1,11 +1,13 @@
 import { drawLinesFromObjects, drawLinestoSub, rightMidpoint, leftMidpoint, findMidpoints, drawLine, setSpacing } from './modules/graphics.js';
 import { initializeTasks } from './modules/tasks.js';
-import * as utils from './utils.js';
+import { initializeLeftNav } from './modules/leftNav.js';
+import * as utils from './modules/utils.js';
 
 var tasks = {}
 var lines = {}
 var currentSaveTask = {}
 
+initializeLeftNav()
 tasks = initializeTasks()
 initializeModal()
 renderEverything()
@@ -43,7 +45,7 @@ function renderEverything(){
     longTaskContainers.forEach(function(container) {
         container.remove();
     });
-    renderTaskObject(tasks, document.body, lines)
+    renderTaskObject(tasks, document.getElementById("mainContent"), lines)
     drawLinesFromObjects(lines)
     resizeSVGElement(document.getElementsByTagName('svg')[0])
 }

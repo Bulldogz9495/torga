@@ -1,17 +1,38 @@
-img {
-    width: 100px;
-    border-radius: 50px;
-    float: left;
-    margin-right: 10px;
+body {
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    background: rgb(43, 46, 43);
 }
 
-body {
-    background: rgb(43, 46, 43);
+#leftNav {
+    min-width: 100px;
+    max-width: 0.25vw;
+    width: 250px;
+    background-color: darkgreen;
+}
+
+.fileTitle {
+    color: rgba(185, 216, 7, 0.75);
+    margin: 5px;
+}
+
+.fileName {
+    margin: 5px;
+    margin-left: 15px;
+    overflow: hidden;
+    font-size: 15px;
+    color: rgba(185, 216, 7, 0.5);
+}
+
+#mainContent {
     color: rgb(255, 255, 255);
     min-height: 100%;
     min-width: 100%;
     flex-direction: column;
-    /* display: flex; */
+    position: relative;
+    flex-grow: 1;
+    display: flex;
 }
 
 path {
@@ -94,21 +115,20 @@ path {
     background-color: transparent;
     border: none;
     color: #33c74c;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .cancelButton {
     background-color: transparent;
     border: none;
     color: #be3609;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 #new_top_task {
-    position: fixed;
-    top: 10px;
-    left: 10px;
+    position: absolute;
     z-index: 1;
+    margin: 5px;
     display: block;
 }
 
