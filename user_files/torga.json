@@ -1,0 +1,25 @@
+{
+  "subtasks": {
+    "1": {
+      "title": "Web Interface",
+      "dateCreated": "9-11-2023",
+      "dateToComplete": "09-11-2023",
+      "content": "As if torga was a website",
+      "subtasks": {}
+    },
+    "2": {
+      "title": "Electron Interface",
+      "dateCreated": "9/11/2023",
+      "dateToComplete": "09/11/2023",
+      "content": "The interaction with the file system and distribution system.",
+      "subtasks": {}
+    },
+    "3": {
+      "title": "Torgas Website",
+      "dateCreated": "9/11/2023",
+      "dateToComplete": "09/15/2023",
+      "content": "The public facing interface for torga.",
+      "subtasks": {}
+    }
+  }
+}

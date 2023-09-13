@@ -2,37 +2,69 @@ body {
     margin: 0px;
     display: flex;
     flex-direction: row;
-    background: rgb(43, 46, 43);
+    align-items: flex-start;
+    background: rgba(47, 54, 47, 0.9);
+    overflow: auto;
 }
 
 #leftNav {
-    min-width: 100px;
-    max-width: 0.25vw;
-    width: 250px;
-    background-color: darkgreen;
+    position: relative;
+    background: rgba(47, 54, 47, 0.95);
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    flex: 1;
+    z-index: 2;
 }
 
 .fileTitle {
-    color: rgba(185, 216, 7, 0.75);
-    margin: 5px;
+    color: rgba(185, 216, 7, 1.0);
+    margin: 10px;
+    width: 100px;
+}
+
+.createFileButton {
+    color: #1ded62b2;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 10px;
 }
 
 .fileName {
-    margin: 5px;
-    margin-left: 15px;
-    overflow: hidden;
+    text-align: left;
+    margin: 0px;
+    padding: 5px;
     font-size: 15px;
-    color: rgba(185, 216, 7, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    color: rgba(185, 216, 7, 0.7);
+    list-style-type: \1F4C1;
+    width: 85%;
+}
+
+.fileDiv.selected {
+    background-color: rgba(255, 255, 255, 0.363)
 }
 
 #mainContent {
     color: rgb(255, 255, 255);
-    min-height: 100%;
-    min-width: 100%;
     flex-direction: column;
     position: relative;
-    flex-grow: 1;
     display: flex;
+    flex: 4;
+    overflow: auto;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+#taskContent {
+    transition: transform 0.1s ease;
+    transform-origin: center center;
+    transform: scale(1);
+    width: max-content;
+    height: max-content;
 }
 
 path {
@@ -45,6 +77,8 @@ path {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: max-content;
+    height: max-content;
 }
 
 .tallTaskContainer {
@@ -54,30 +88,50 @@ path {
     justify-content: space-around;
 }
 
-.lineMaker {
+#lineMaker {
     position: absolute;
     /* margin: -8px; */
     top: 0;
     left: 0;
     z-index: -1;
+    transform: scale(1);
+    transform-origin: center center;
+    transition: transform 0.1s ease;
+    min-width: 100%;
+    min-height: 100%;
+    width: max-content;
+    height: max-content;
 }
 
 .task {
     position: relative;
     text-align: left;
     border-radius: 10px;
-    border-color: rgba(41, 236, 41, 0.5);
+    border-color: rgba(22, 22, 161, 0.4);
+    color: rgb(22, 22, 161);
     border-style: solid;
     border-width: 0.4vh;
     padding: 15px;
     clear: left;
     margin-top: 8%;
     margin-bottom: 8%;
-    background-color: rgba(55, 55, 165, 0.2);
+    background-color: rgba(55, 55, 165, 0.15);
     margin-left: 5vh;
     margin-right: 5vh;
     display: flex;
     flex-direction: column;
+}
+
+.completed {
+    border-color: rgba(55, 165, 79, 1.0);
+    background-color: rgba(55, 165, 79, 0.1);
+    color: rgba(55, 165, 79, 1.0);
+}
+
+.overdue {
+    border-color: rgb(165, 55, 55);
+    background-color: rgba(165, 55, 55, 0.1);
+    color: rgb(165, 55, 55);
 }
 
 .taskTitle {
@@ -86,6 +140,10 @@ path {
     color:white;
     border: none;
     margin-bottom: 5px;
+}
+
+.checkLabel {
+    margin-right: 20px;
 }
 
 .taskTimeline {
@@ -103,6 +161,10 @@ path {
     color:white;
     border: none;
     margin-bottom: 2px;
+    overflow: hidden;
+    min-height: 50px;
+    max-height: 300px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .taskButtons {
@@ -114,31 +176,60 @@ path {
 .createButton {
     background-color: transparent;
     border: none;
-    color: #33c74c;
+    color: #38fa58a2;
     font-size: 25px;
 }
 
 .cancelButton {
     background-color: transparent;
     border: none;
-    color: #be3609;
+    color: #ff4b0fab;
+    font-size: 25px;
+}
+
+.fileDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+.fileCancelButton {
+    font-size: 15px;
+    color: rgba(47, 54, 47, 0.8);
+}
+
+.zoomButton {
+    background-color: transparent;
+    border: none;
     font-size: 25px;
 }
 
 #new_top_task {
     position: absolute;
+    left: 5px;
     z-index: 1;
     margin: 5px;
     display: block;
 }
 
+#zoomButtons {
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#createFileModal {
+    max-width: 500px;
+    flex-direction: column
+}
+
 .modal {
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 2;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
   }

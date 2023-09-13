@@ -38,7 +38,7 @@ export function drawLine(svg, x1, y1, x2, y2){
 
 export function drawLinesFromObjects(lines){
     // Remove old lines
-    var svg = document.getElementsByClassName("lineMaker")[0]
+    var svg = document.getElementById("lineMaker")
     while (svg.firstChild) {
         svg.removeChild(svg.firstChild)
     }
@@ -46,7 +46,13 @@ export function drawLinesFromObjects(lines){
     for (var line in lines){
         const right = rightMidpoint(lines[line].lineStarter)
         const left = leftMidpoint(lines[line].lineEnder)
-        drawLine(document.getElementsByTagName('svg')[0], right[0] + window.scrollX, right[1] + window.scrollY, left[0] + window.scrollX, left[1] + window.scrollY)
+        const main = document.getElementById('taskContent').getBoundingClientRect()
+        const svg = document.getElementById('lineMaker').getBoundingClientRect()
+        const x_adjustment = main.left + document.getElementById('taskContent').scrollLeft
+        const y_adjustment = main.top + document.getElementById('taskContent').scrollTop
+        if (left[0] - main.left < svg.right){document.getElementById('lineMaker').style.width = `${left[0] - main.left}px`}
+        if (left[1] - main.top < svg.bottom){document.getElementById('lineMaker').style.height = `${left[1] - main.top}px`}
+        drawLine(document.getElementsByTagName('svg')[0], right[0] - x_adjustment, right[1] - y_adjustment , left[0] - x_adjustment, left[1] - y_adjustment)
     }
 }
 

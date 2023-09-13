@@ -10,3 +10,11 @@ export function deleteSubobjectRecursively(obj, subobjectToDelete) {
         }
     }
 }
+
+export function zoomIn(element, scaleAmount) {
+    let currentTransform
+    currentTransform = currentTransform = window.getComputedStyle(element).transform;
+    const currentScale =parseFloat(currentTransform.split('(')[1].split(')')[0]);
+    const newScale = currentScale + scaleAmount;
+    element.style.transform = `scale(${newScale})`;
+  }

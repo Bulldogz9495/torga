@@ -6,11 +6,23 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     </head>
     <body>
-        <div id="leftNav"></div>
-        <svg class="lineMaker"></svg>
+        <ul id="leftNav"></ul>
+        <div id="createFileModal" class='modal'>
+            <label for="textInput">Please enter some text:</label>
+            <input type="text" id="fileNameInput">
+            <div style="display: flex; flex-direction: row;">
+                <button id="submitFileNameButton" class="createButton"><i class="fa-solid fa-square-plus"></i></button>
+                <button id="cancelFileNameCreation" class="cancelButton"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+        </div>
+        <div id="zoomButtons">
+            <button id="top_zoom_in" class="zoomButton"><i class="fa-solid fa-magnifying-glass-plus" style="color: #f4e00b;"></i></button>
+            <button id="top_zoom_out" class="zoomButton"><i class="fa-solid fa-magnifying-glass-minus" style="color: #f4e00b;"></i></button>
+        </div>
+        <button id="new_top_task" class="createButton"><i class="fa-solid fa-square-plus"></i></button>
+        <div id="createTaskModal" class="modal"></div>
         <div id="mainContent">
-            <button id="new_top_task" class="createButton"><i class="fa-solid fa-square-plus"></i></button>
-            <div id="createTaskModal" class="modal"></div>
+            <div id="taskContent"><svg id="lineMaker"></svg></div>
         </div>
         <script type="module" src="./main.js"></script>
         <script src="https://kit.fontawesome.com/8bc913722b.js" crossorigin="anonymous"></script>
