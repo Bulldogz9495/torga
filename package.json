@@ -1,17 +1,18 @@
 {
   "name": "torga",
   "version": "0.1.0",
-  "description": "",
+  "description": "Torga task organization software for proffesionals",
   "main": "electron_startup.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bulldogz9495/torga.git"
+    "url": "https://github.com/Bulldogz9495/torga.git"
   },
   "keywords": [
     "task",
@@ -33,6 +34,7 @@
     "electron": "^26.1.0"
   },
   "dependencies": {
+    "@electron-forge/publisher-github": "^6.4.2",
     "electron-squirrel-startup": "^1.0.0",
     "path": "^0.12.7"
   }

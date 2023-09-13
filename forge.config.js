@@ -27,4 +27,17 @@ module.exports = {
       config: {},
     },
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'Bulldogz9495',
+          name: 'torga'
+        },
+        prerelease: false,
+        draft: true
+      }
+    }
+  ]
 };
