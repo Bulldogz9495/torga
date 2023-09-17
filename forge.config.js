@@ -1,6 +1,12 @@
 module.exports = {
   packagerConfig: {
     asar: true,
+    // Specify target platforms (all three major OSes)
+    targets: [
+      { platform: 'win32', arch: 'x64' },
+      { platform: 'darwin', arch: 'x64' },
+      { platform: 'linux', arch: 'x64' },
+    ],
   },
   rebuildConfig: {},
   makers: [

@@ -1,6 +1,6 @@
 {
   "name": "torga",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Torga task organization software for proffesionals",
   "main": "electron_startup.js",
   "scripts": {
@@ -36,6 +36,7 @@
   "dependencies": {
     "@electron-forge/publisher-github": "^6.4.2",
     "electron-squirrel-startup": "^1.0.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "update-electron-app": "^2.0.1"
   }
 }

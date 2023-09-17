@@ -2,7 +2,19 @@ const { app, BrowserWindow, screen, ipcMain, globalShortcut, ipcRenderer, Menu, 
 const fs = require('fs');
 const path = require('path');
 
+
+
+require('update-electron-app')()
+
 var mainWindow
+
+if (require('electron-squirrel-startup')) app.quit()
+// if first time install on windows, do not run application, rather
+// let squirrel installer do its work
+const setupEvents = require('./installers/setup-events')
+if (setupEvents.handleSquirrelEvent()) {
+  process.exit()
+}
 
 
 const createWindow = (width, height) => {
